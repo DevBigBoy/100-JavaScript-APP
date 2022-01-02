@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Image Slider</title>
+    <!--=============== BOXICONS ===============-->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!--================= CSS =================-->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <section class="product section">
+      <div class="product__container container grid">
+        <div class="product__images grid">
+          <div class="img__display">
+            <div class="img__showcase">
+              <img src="./assets/img/shoe_1.jpg" alt="shoe image" />
+              <img src="./assets/img/shoe_2.jpg" alt="shoe image" />
+              <img src="./assets/img/shoe_3.jpg" alt="shoe image" />
+              <img src="./assets/img/shoe_4.jpg" alt="shoe image" />
+            </div>
+          </div>
+
+          <div class="img__select">
+            <div class="img__item">
+              <a href="#" data-id="1">
+                <img src="./assets/img/shoe_1.jpg" alt="shoe image" />
+              </a>
+            </div>
+
+            <div class="img__item">
+              <a href="#" data-id="2">
+                <img src="./assets/img/shoe_2.jpg" alt="shoe image" />
+              </a>
+            </div>
+
+            <div class="img__item">
+              <a href="#" data-id="3">
+                <img src="./assets/img/shoe_3.jpg" alt="shoe image" />
+              </a>
+            </div>
+
+            <div class="img__item">
+              <a href="#" data-id="4">
+                <img src="./assets/img/shoe_4.jpg" alt="shoe image" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product__content">
+          <span class="product__subtitle">SNEAKER COMPANY</span>
+          <h2 class="product__title">
+            Fall Limited Edition Shoe<span>.</span>
+          </h2>
+
+          <p class="product__description">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they'll withstand everything
+            the weather can offer.
+          </p>
+
+          <div class="product__price">
+            <div>
+              <span class="product__price-offer">$125.00</span>
+              <span class="product__offer">50%</span>
+            </div>
+            <span class="product__price-orginal">$250.00</span>
+          </div>
+
+          <div class="product__control grid">
+            <div class="product__quantity">
+              <button class="btn decrease">
+                <i class="bx bx-minus"></i>
+              </button>
+
+              <span class="product__quantity-counter" id="counter">0</span>
+
+              <button class="btn increase">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+
+            <a href="#" class="product__button">
+              <i class="bx bx-cart-alt"></i>
+              Add to cart
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--============== JavaScript ==============-->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
