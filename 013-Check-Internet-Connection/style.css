@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.box {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  padding: 1rem 1rem 1rem 1.5rem;
+  border-radius: 0.5rem;
+  column-gap: 1rem;
+  box-shadow: 0 6.4px 14.4px rgb(0 0 0 / 13%);
+  animation: showToast 1s ease forwards;
+}
+
+@keyframes showToast {
+  0% {
+    transform: translateX(-100%);
+  }
+  40% {
+    transform: translateX(10%);
+  }
+  80%,
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+.box.hide {
+  animation: hideToast 1s ease forwards;
+}
+
+@keyframes hideToast {
+  0% {
+    transform: translateX(20px);
+  }
+  40% {
+    transform: translateX(10%);
+  }
+  80%,
+  100% {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+  }
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #2ecc71;
+  width: 5px;
+  height: 100%;
+  border-radius: 0.5rem 0 0 0.5em;
+}
+
+.box__icon {
+  padding: 0.75rem;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.box.offline::before {
+  background-color: #d4142a;
+}
+
+.box.offline .box__icon {
+  padding: 0.75rem;
+  background-color: #d4142a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.box__close,
+.box__icon i {
+  font-size: 1.5rem;
+}
+
+.box__text {
+  font-weight: 500;
+}
+
+.box.offline .box__text {
+  color: rgb(105, 105, 105);
+}
+
+.box__close {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(226, 217, 217);
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .box {
+    transform: scale(1.25) translate(15%, 20%);
+  }
+}
