@@ -166,7 +166,7 @@ button {
   font-size: 1.5rem;
 }
 
-.features ul li:hover {
+.features ul li:is(:hover, .active) {
   color: #fff;
   background-color: var(--body-color);
 }
