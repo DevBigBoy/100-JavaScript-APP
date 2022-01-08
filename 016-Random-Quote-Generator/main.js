@@ -4,7 +4,8 @@ const quoteText = document.querySelector(".quote"),
   soundBtn = document.querySelector(".sound"),
   copyBtn = document.querySelector(".copy"),
   twitterBtn = document.querySelector(".twitter"),
-  facebookBtn = document.querySelector(".facebook");
+  facebookBtn = document.querySelector(".facebook"),
+  synth = speechSynthesis;
 
 quoteBtn.addEventListener("click", randomQuote);
 
@@ -23,13 +24,17 @@ function randomQuote() {
     });
 }
 
-soundBtn.addEventListener("click", ()=>{
-  if(!quoteBtn.classList.contains("loading")){
-      let utterance = new SpeechSynthesisUtterance(`${quoteText.innerText} by ${author.innerText}`);
-      synth.speak(utterance);
-      setInterval(()=>{
-          !synth.speaking ? speechBtn.classList.remove("active") : speechBtn.classList.add("active");
-      }, 10);
+soundBtn.addEventListener("click", () => {
+  if (!quoteBtn.classList.contains("loading")) {
+    let utterance = new SpeechSynthesisUtterance(
+      `${quoteText.innerText} by ${author.innerText}`
+    );
+    synth.speak(utterance);
+    setInterval(() => {
+      !synth.speaking
+        ? soundBtn.classList.remove("active")
+        : soundBtn.classList.add("active");
+    }, 10);
   }
 });
 
